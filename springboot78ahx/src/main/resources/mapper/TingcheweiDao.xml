@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TingcheweiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TingcheweiEntity" id="tingcheweiMap">
+        <result property="chechangmingcheng" column="chechangmingcheng"/>
+        <result property="cheweiquhao" column="cheweiquhao"/>
+        <result property="cheweibianhao" column="cheweibianhao"/>
+        <result property="chechangleixing" column="chechangleixing"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TingcheweiVO" >
+		SELECT * FROM tingchewei  tingchewei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TingcheweiVO" >
+		SELECT  tingchewei.* FROM tingchewei  tingchewei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TingcheweiView" >
+
+		SELECT  tingchewei.* FROM tingchewei  tingchewei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TingcheweiView" >
+		SELECT * FROM tingchewei  tingchewei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
